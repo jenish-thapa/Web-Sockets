@@ -1,8 +1,5 @@
-import Chatbox from './components/Chatbox/Chatbox';
-import io from "socket.io-client";
-import './App.css';
-
-const socket = io("http://localhost:8080");
+import Chatbox from "./components/Chatbox/Chatbox";
+import "./App.css";
 
 function App() {
   return (
