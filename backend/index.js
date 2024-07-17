@@ -32,8 +32,10 @@ app.post("/chat", (req, res) => {
 io.on("connection", (socket) => {
   console.log("A user connected");
   socket.on("message", (message) => {
-    console.log(message);
-    socket.emit("message", message);
+    io.emit("message", message);
+  });
+  socket.on("disconnect", () => {
+    console.log("A user disconnected");
   });
 });
 
